@@ -1,12 +1,25 @@
-const http = require('http');
-const axios = require('axios');
+const http = require('http'), 
+axios = require('axios'),
+logger = require('morgan'),
+cors = require('cors'),
+express = require('express'),
+bodyParser = require('body-parser');
 
-http.createServer((req, res)=>{
-  //res.write("Hello world \n"); // write a response
-  //res.write(users.join("\n"))
-  res.write(chars.join("\n"))
-  res.end(); //end the response
-}).listen(8000); // listen for requests on port 8000
+var app = express();
+var port = 8000;
+
+app.use(bodyParser.json())
+
+app.get('/hello', (req, res) => {
+    res.send('Hello World!');
+});
+
+//http.createServer((req, res)=>{
+//  //res.write("Hello world \n"); // write a response
+//  //res.write(users.join("\n"))
+//  res.write(chars.join("\n"))
+//  res.end(); //end the response
+//}).listen(8000); // listen for requests on port 8000
 
 //let users = []; // names of users will be stored here
 let chars = [];
@@ -23,3 +36,7 @@ let chars = [];
     console.log(error);
   }
 })();
+
+app.listen(port, function(err){
+    console.log('Listening on port: ' + port);
+});
