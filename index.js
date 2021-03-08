@@ -10,8 +10,12 @@ var port = 8000;
 
 app.use(bodyParser.json())
 
-app.get('/hello', (req, res) => {
-    res.send('Hello World!');
+app.get('/hello/:foo/:bar', (req, res) => {
+    //res.send('Hello World!');
+    res.json({message: 'Hello World!', data: [
+        req.params.foo,
+        req.params.bar
+    ]});
 });
 
 //http.createServer((req, res)=>{
