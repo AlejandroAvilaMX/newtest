@@ -9,18 +9,20 @@ var app = express();
 var port = 8000;
 
 app.use(bodyParser.json())
+app.use(logger('tiny'));
+app.use(require('./route'));
 
-app.get('/hello/:foo/:bar', (req, res) => {
-    //res.send('Hello World!');
-    res.json({message: 'Hello World!', data: [
-        req.params.foo,
-        req.params.bar
-    ]});
-});
+//app.get('/hello/:foo/:bar', (req, res) => {
+//    //res.send('Hello World!');
+//    res.json({message: 'Hello World!', data: [
+//        req.params.foo,
+//        req.params.bar
+//    ]});
+//});
 
-app.post('/hello', (req, res) => {
-    res.json({result: 'Post was sent', data: req.body});
-});
+//app.post('/hello', (req, res) => {
+//    res.json({result: 'Post was sent', data: req.body});
+//});
 
 //http.createServer((req, res)=>{
 //  //res.write("Hello world \n"); // write a response
