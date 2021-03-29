@@ -6,6 +6,10 @@ var itemCtrl = require('./item-controller');
 
 router.get('/hello', itemCtrl.getWorld);
 
+router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
+
+router.post('/hello', itemCtrl.postWorld);
+
 //router.get('/hello/:foo/:bar', (req, res) => {
 //    //res.send('Hello World!');
 //    res.json({message: 'Hello World!', data: [
