@@ -20,10 +20,11 @@
   "dependencies": {
     "axios": "^0.21.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.16.4",
     "mongodb": "^3.6.5",
     "mongoose": "^5.12.3",
     "morgan": "^1.10.0",
+    "routes": "^2.1.0",
     "start": "^5.1.0"
   }
 }
