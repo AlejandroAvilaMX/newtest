@@ -28,4 +28,6 @@ router.delete('/users/:id', userCtrl.deleteUser);
 //    res.json({result: 'Post was sent', data: req.body});
 //});
 
+module.exports.UPLOAD_PATH = "uploads";
+
 module.exports = router;
