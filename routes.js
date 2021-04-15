@@ -14,7 +14,7 @@ router.get('/users', userCtrl.getUsers);
 router.get('/users/:id', userCtrl.getUser);
 router.put('/users/:id', userCtrl.updateUser);
 router.delete('/users/:id', userCtrl.deleteUser);
-
+/*
 module.exports.UPLOAD_PATH = "uploads";
 
 var multer = require("multer");
@@ -26,4 +26,4 @@ router.get('/images', imageCtrl.getImages);
 router.get('/images/:id', imageCtrl.getImage);
 router.delete('/images/:id', imageCtrl.deleteImage);
 
-module.exports = router;
+module.exports = router;*/
