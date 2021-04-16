@@ -1,5 +1,5 @@
 const http = require('http'),
-// axios = require('axios'),
+axios = require('axios'),
 logger = require('morgan'),
 cors = require('cors'),
 express = require('express'),
@@ -52,4 +52,4 @@ const dbURI = "mongodb://localhost/test";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('connected to db'))
-        .catch((err) => console.log(err));
+        .catch((err) => console.log(err)); 
