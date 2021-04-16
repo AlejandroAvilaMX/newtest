@@ -44,3 +44,17 @@ exports.getImage = function(req, res) {
         fs.createReadStream(path.join(UPLOAD_PATH, image.filename)).pipe(res);
     });
 };
+
+exports.deleteImage = function(req, res) {
+    let imgId = req.params.id;
+
+    Image.findByIdAndRemove(imgId, (err, image) => {
+        if (err && image) {
+            return res.sendStatus(400);
+        }
+
+        del([path.join(UPLOAD_PATH, image.filename)]).then(deleted => {
+            res.sendStatus(200);
+        });
+    });
+};
